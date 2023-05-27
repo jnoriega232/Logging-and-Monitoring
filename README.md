@@ -51,15 +51,15 @@ By leveraging logging at these different layers, you can effectively monitor and
 
 ![image](https://user-images.githubusercontent.com/112146207/231026643-50acaa3b-3f83-4467-b6ee-49cf28ee2225.png)
 
-- These files are over 500MB, here is a link to download them: 
+- Next, we will access our Azure account and navigate to the "Storage accounts" section. From there, we will initiate a search for "Storage accounts" and select the option to "Create storage account." This will enable us to set up a new storage account in Azure.
 
-- We will then go into our Azure account and search "storage account" and click on "Create storage account"
+<p align="center">
+<img src="https://i.imgur.com/gjdNQ3d.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![image](https://user-images.githubusercontent.com/112146207/231028070-1e083867-7a13-4d6f-b4d7-a68c387c0ee5.png)
+- While creating the storage account, please ensure that you place it under the "RG-Cyber-Lab" resource group. Additionally, specify a unique storage account name, select the desired region, and set the redundancy to locally-redundant storage (LRS). These configurations will ensure that the storage account is properly organized and aligned with the required specifications for our lab.
 
-- When we create our storage account make sure to put it under the "RG-Cyber-Lab" resource group, make a storage account name, change the region, and change the redundancy to locally-redundant storage (LRS).
-
-- Remember that Redundancy in cybersecurity is often used to improve fault tolerance, which means the ability of a system to continue functioning even if a part of it fails.
+- It's important to remember that redundancy in cybersecurity plays a crucial role in enhancing fault tolerance. Fault tolerance refers to the system's ability to continue operating smoothly even in the event of a failure in one of its components. By implementing redundancy measures, such as locally-redundant storage (LRS) in our storage account, we ensure that our data remains available and protected even if certain components or systems encounter issues or failures.
 
 ![image](https://user-images.githubusercontent.com/112146207/231028783-ea7691e8-3f53-4533-852d-4e86d36b566c.png)
 
