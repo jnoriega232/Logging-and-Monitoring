@@ -1,8 +1,8 @@
 # Logging and Monitoring
 
-## Objectives for the next 7 Labs that will create our Logging and Monitoring System.
+## Objectives for the next 7 Labs, which will help us build our Logging and Monitoring System:
 
-- Azure Logging at Different Layers (Tenant, Activity, Resource)
+- Overview of Azure Logging at Different Layers (Tenant, Activity, Resource)
 - Geo IP Data Ingestion & Log Analytics & Microsoft Sentinel Setup
 - Enable MDC & Configure Log Collection for VMs
 - KQL Deep Dive
@@ -26,11 +26,28 @@
 
 </summary>
 
-#### In this lab, we will use 2 GeoIP files which will help us correlate IP addresses to figure out where the attacks originated from. <b>
+  ## Here is an overview of Azure logging at different layers: tenant, subscription, and resource:
+  
+1. Tenant Level Logging: Azure allows you to enable logging at the tenant level, capturing logs for services and activities that span across your entire Azure tenant. This includes Azure AD logs, Azure Resource Manager logs, and more. Tenant-level logging provides a holistic view of activities and events across your Azure environment.
 
-> This will be interesting because in Event Viewer we only see IP addresses, but we have no clue where the attacks came from.``` 
+2. Subscription Level Logging: Logging can also be configured at the subscription level, allowing you to monitor and track activities specific to a particular Azure subscription. This includes capturing logs for resource deployments, management operations, and changes within the subscription.
 
-- We will first download Two IP files 
+3. Resource Level Logging: Azure provides the ability to enable logging at the resource level, focusing on specific Azure resources such as virtual machines, storage accounts, or databases. Resource-level logging offers detailed insights into the operations, performance metrics, and diagnostic data of individual resources.
+
+By leveraging logging at these different layers, you can effectively monitor and analyze activities, detect security threats, troubleshoot issues, and ensure compliance across your Azure environment.
+
+<p align="center">
+<img src="https://i.imgur.com/lLaiDex.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+<details close>
+
+---
+
+</summary>
+
+  ## In this lab, we will utilize two GeoIP files to enhance our analysis capabilities. These files will allow us to correlate IP addresses and determine the geographical location from which the attacks originated. This information will provide valuable insights into the source of the attacks and help us strengthen our security measures. <b>
+
+- To begin, we will download two IP files that are essential for our analysis. 
 
 ![image](https://user-images.githubusercontent.com/112146207/231026643-50acaa3b-3f83-4467-b6ee-49cf28ee2225.png)
 
