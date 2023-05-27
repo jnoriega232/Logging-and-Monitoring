@@ -61,63 +61,79 @@ By leveraging logging at these different layers, you can effectively monitor and
 
 - It's important to remember that redundancy in cybersecurity plays a crucial role in enhancing fault tolerance. Fault tolerance refers to the system's ability to continue operating smoothly even in the event of a failure in one of its components. By implementing redundancy measures, such as locally-redundant storage (LRS) in our storage account, we ensure that our data remains available and protected even if certain components or systems encounter issues or failures.
 
-![image](https://user-images.githubusercontent.com/112146207/231028783-ea7691e8-3f53-4533-852d-4e86d36b566c.png)
-
-- Once the storage account is created, go to the search bar and type in "storage account" 
+<p align="center">
+<img src="https://i.imgur.com/weQglom.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
+- After successfully creating the storage account, proceed to the search bar and enter "storage account" to locate and access the storage account within Azure. This will allow us to manage and configure the storage account according to our specific requirements. 
 > Within the storage account, create a container named “ipgeodata”
 
-![image](https://user-images.githubusercontent.com/112146207/231030560-acfa43e5-4d3e-4319-becb-5e9bf0dd42df.png)
-
-- Click on ```ipgeodata and we will upload the 2 files we downloaded
+<p align="center">
+<img src="https://i.imgur.com/RMcy7Va.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
+- Click on ```ipgeodata``` and we will upload the 2 files we downloaded
 > This might take a while since one of the files is very large, but patience is key! 
 
-![image](https://user-images.githubusercontent.com/112146207/231031297-24b3618d-59af-49ae-b564-7397895b5cb9.png)
+<p align="center">
+<img src="https://i.imgur.com/6JGq0yO.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- We now need to create SAS URLs for both of these files.
-> A SAS is used to provide access to files on an individual basis instead of opening up the whole container.
+- We now need to generate SAS URLs for both of these files.
+> A SAS (Shared Access Signature) is utilized to grant access to files on an individual basis, rather than providing unrestricted access to the entire container. It allows for more granular control and security by specifying the specific permissions and timeframe for which the access is granted.
 
 - We will first copy the file names and jot them down on a notepad 
 
-![image](https://user-images.githubusercontent.com/112146207/231032762-02446bd7-f2ae-4378-acea-31c8029c4083.png)
+<p align="center">
+<img src="https://i.imgur.com/iLc6Obf.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
+- To generate a SAS for the first file, right-click on its name and select the "Generate SAS" option. Ensure that you generate the SAS for the city blocks IPv4 file specifically. 
 
-- Right-click the file name and press "generate SAS" and make sure it is the city block IPv4 
+<p align="center">
+<img src="https://i.imgur.com/DaESGBQ.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
+- Extend the expiration date, by setting it to be at least one year in the future, and then click on the "Generate SAS" button. After generating the SAS, make sure to copy the Blob SAS URL and save it in your notes for future reference. This SAS URL will be utilized later in the process, so it's crucial to keep it readily available.
 
-![image](https://user-images.githubusercontent.com/112146207/231033022-3a06ba97-7561-408a-9fb0-cd340e02744d.png)
+- Allow me to explain the rationale behind this process. The purpose of generating the SAS URL is to provide it to the Log repository. The Log repository will utilize this SAS URL to access and read the data from the specified file in Azure Sentinel. This data will then be ingested into the Azure Sentinel database for further analysis and monitoring. We can anticipate exploring this integration in the upcoming steps, which will allow us to leverage the power of Azure Sentinel for efficient log management and analysis.
 
-- Change the expiration date and click "generate SAS" then copy the Blob SAS URL and put it on your notes because we will use it later
+<p align="center">
+<img src="https://i.imgur.com/JdqUeoP.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
+- The identical steps will be followed for the "City-Locations" file.
 
-``` https://fin69.blob.core.windows.net/ipgeodata/GeoIP2-City-Blocks-IPv4.csv?sp=r&st=2023-04-20T08:21:40Z&se=2024-04-20T16:21:40Z&spr=https&sv=2021-12-02&sr=b&sig=RsJoMHzVf0j1UwvGVISb1hVOWnpoT%2BIo5roRwZJcQsM%3D```
+<p align="center">
+<img src="https://i.imgur.com/iHJFjV6.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
+- It is crucial to have copied the Blob URLs to a notepad or another document, as we will be relying on them for further steps. Please ensure that you have securely saved the Blob URLs, as they will be necessary for our upcoming tasks and integrations.
 
-```https://fin69.blob.core.windows.net/ipgeodata/GeoIP2-City-Locations-en.csv?sp=r&st=2023-04-20T08:22:54Z&se=2024-04-20T16:22:54Z&spr=https&sv=2021-12-02&sr=b&sig=usl0HXJnadp8mnD7TxrrFcTJ34T8qddjZY%2Fft63Q1js%3D```
+<p align="center">
+<img src="https://i.imgur.com/U6UO6vT.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Just to explain why we are doing this, we are going to give this SAS URL to the Log repository which will read all this data in Sintenial and put it into its database. Look forward to that, shortly. 
+- Our SIEM (Security Information and Event Management) solution will be configured to monitor our log analytics workspace. It will collect, analyze, and identify logs in real-time.
 
-![image](https://user-images.githubusercontent.com/112146207/231033594-d39d112c-3a55-4bc2-9a05-e3336d00f910.png)
-
-- The same steps will be done for the "city-locations" file
-
-![image](https://user-images.githubusercontent.com/112146207/231034805-cc50ffd3-0c0b-4862-959b-ec9c1275a094.png)
-
-- It's very important that you copied the Blob URLs to a notepad because we will use them
-
-![image](https://user-images.githubusercontent.com/112146207/231035113-37153ffd-7b20-4039-89e0-32fa03063cd6.png)
-
-![LOGGING AND MONTIROING PROG](https://user-images.githubusercontent.com/109401839/233307421-5f4df4ab-a0ce-4f64-a485-891587567414.png)
-
-- Our SIEM will look into our work analytics workspace where it will collect, analyze and identify logs in real-time. 
-
-- Go to portal.azure.com and search "log analytics workspace" then click "create"
+<p align="center">
+<img src="https://i.imgur.com/NCuqbKt.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
+- To create a Log Analytics workspace, please navigate to portal.azure.com and use the search bar to find "log analytics workspace". Once located, click on the "Create" button to initiate the workspace creation process. 
 
 > Enter your resource group, name, and region
 > Click "create"
 
-![image](https://user-images.githubusercontent.com/112146207/231041157-07ff8690-0e94-4d1a-8855-b0a13f2ae6ca.png)
+<p align="center">
+<img src="https://i.imgur.com/VOSRAh3.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- We just created our work analytics workspace which will be injected with Geo data to let us correlate IP addresses and see people's origins. We will then create our SIEMs resource and connect it to the log analytics workspace. 
+- We have created our Log Analytics workspace, which will be enriched with Geo data to correlate IP addresses and determine origins. Now, we will create our SIEM resource and establish a connection with the Log Analytics workspace. This integration will empower us to monitor and respond to security events effectively by utilizing the comprehensive log data collected within the workspace. It will enhance our cybersecurity capabilities and enable proactive threat management. 
 
-- Go to the search bar and search "Microsoft Sentinel" and hit "Create" 
+- In the Azure portal, search for "Microsoft Sentinel" in the search bar and click "Create" to initiate the provisioning of the powerful security information and event management (SIEM) solution. 
 
-- Then click on your workspace and click "add" 
+- Afterward, select your Log Analytics workspace and click on the "Add" button to establish the connection between the Microsoft Sentinel SIEM solution and the Log Analytics workspace. 
 
 ![image](https://user-images.githubusercontent.com/112146207/231042846-4b76998a-cc03-4c4c-9568-174d36763b7b.png)
 
