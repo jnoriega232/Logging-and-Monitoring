@@ -135,31 +135,44 @@ By leveraging logging at these different layers, you can effectively monitor and
 
 - Afterward, select your Log Analytics workspace and click on the "Add" button to establish the connection between the Microsoft Sentinel SIEM solution and the Log Analytics workspace. 
 
-![image](https://user-images.githubusercontent.com/112146207/231042846-4b76998a-cc03-4c4c-9568-174d36763b7b.png)
+<p align="center">
+<img src="https://i.imgur.com/D72hGmc.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- We will now create 2 Watchlists within Azure Sentinel and ingest geo-data CSV Files from Azure Storage
+- Now, we will proceed to create two Watchlists within Azure Sentinel. Additionally, we will ingest CSV files containing geo-data from Azure Storage. These steps will enable us to leverage the Watchlists feature for advanced threat detection and response, while also enriching our security analytics with geo-location information.
 
-![image](https://user-images.githubusercontent.com/112146207/231043926-67b9a1bc-b5cf-4b74-81bc-2370a8901560.png)
+<p align="center">
+<img src="https://i.imgur.com/rRV673f.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
+- Let's add the following information exactly, using the Blob URLs that you previously copied and saved
+- After you carefully fill it out, Review and create
 
-- Now add this information exactly and use YOUR Blob URLs that you copied and saved 
+<p align="center">
+<img src="https://i.imgur.com/pT7Yffk.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/qj0WkUT.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![image](https://user-images.githubusercontent.com/112146207/231044304-b37eee42-396e-4d38-a3b7-24f2d6062360.png)
+- Let's replicate the same steps to create the second watchlist. Pay careful attention to filling in the details exactly as provided
+  
+<p align="center">
+<img src="https://i.imgur.com/fQWcpY2.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/1pXDLiZ.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>  
 
-![image](https://user-images.githubusercontent.com/112146207/231045193-e4b86e10-1d9f-43a7-98da-d447ddcb1955.png)
+- Now, we need to enable the upload or loading of these files from our storage account into Sentinel/Log Analytics Workspace. It's important to note that the larger file may take more than 24 hours to complete the process due to its size. Patience is required as the system processes and transfers the data from the storage account to the Log Analytics Workspace within Sentinel.
 
-![image](https://user-images.githubusercontent.com/112146207/231052913-3c103c38-3ee6-4f4c-9efa-8d3832d7252a.png)
-
-- For the second watchlist, I put this information in
-
-![image](https://user-images.githubusercontent.com/112146207/231053907-bdec4f66-2204-4310-8cd4-0ead229d4c39.png)
-
-- Now we have to allow these files to “upload”/load from our storage account into Sentinel/Log Analytics Workspace. The big one will likely take over 24 hours
-
-- We will go to the work analytics workspace and query the watchlists we created just to make sure we can see the records from both watchlists 
+- In the Log Analytics workspace, we will execute queries to verify the presence of records from both watchlists, ensuring their visibility and accessibility. This step will confirm the successful ingestion of data from the watchlists into the Log Analytics workspace, enabling us to utilize the information for analysis and monitoring purposes.
 
 - It should look something like this:
 
-![image](https://user-images.githubusercontent.com/112146207/231058252-685c7062-26c7-427d-970d-34c9fe2d851a.png)
+<p align="center">
+<img src="https://i.imgur.com/jLEXBWl.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 <details close>
 
 ---
