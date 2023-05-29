@@ -179,16 +179,19 @@ By leveraging logging at these different layers, you can effectively monitor and
 
 </summary>
 
-In this section, we will create a Linux VM, and we're going to configure the Windows security event logs from our Windows machine, and the syslog logs from our Linux machine to send to our log analytics workspace. In addition to the VM, we will also configure logging for the NSG (AKA the mini firewalls) and we're going to send flow logs into the log analytics workspace. 
+- In this segment, we will establish a Linux VM and configure the Windows security event logs from our Windows machine, along with the syslog logs from our Linux machine, to be sent to the log analytics workspace. Furthermore, we will configure logging for the NSG (Network Security Group), also referred to as mini firewalls, and transmit flow logs into the log analytics workspace. This comprehensive setup will allow us to centralize and analyze logs from various sources, enhancing our monitoring and security capabilities. 
 
-To create another Virtual Machine in Azure, use the same Region, Resource Group, and VNet as the previous VM, and name it "linux-vm". 
-Avoid choosing B1s for the VM size as it may stop creating logs during a DDoS attack. 
-Use a username and password for authentication instead of SSH keys to restrict access. 
-Lastly, open up the NSG to all traffic to allow for inbound and outbound traffic control.
-  
-![image](https://user-images.githubusercontent.com/112146207/231915269-71d8b02a-9a26-4606-80a6-15b9e2dbfb3e.png)
-![image](https://user-images.githubusercontent.com/112146207/231915347-62f9b7dc-8417-407e-8c89-868c9030add0.png)
+- To create an additional Virtual Machine in Azure, ensure that you select the same Region, Resource Group, and VNet as the previous VM. Name this new VM "linux-vm" to maintain consistency across your deployment. 
+- It is recommended to avoid choosing the 1 vcpu VM size due to its potential inability to generate logs during a DDoS attack. 
+- For authentication purposes, opt to use a username and password instead of SSH keys to restrict access to the Virtual Machine.
+- Finally, make sure that the Network Security Group (NSG) is set up to allow unrestricted traffic flow by permitting all types of traffic. This configuration will enable seamless communication and remove any restrictions imposed by the NSG on the flow of network traffic.
 
+<p align="center">
+<img src="https://i.imgur.com/ieyBzhM.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/zXLjrZf.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 ---
  
