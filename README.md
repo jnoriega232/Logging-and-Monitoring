@@ -195,32 +195,42 @@ By leveraging logging at these different layers, you can effectively monitor and
 
 ---
  
-To enhance the security of your Azure environment, there are three steps that we will take. 
-First, enable Microsoft Defender for Cloud for your Log Analytics Workspace. 
- 
-![image](https://user-images.githubusercontent.com/112146207/231920040-942a930e-8b64-4e57-a570-1c061285996c.png)
-   
-![image](https://user-images.githubusercontent.com/112146207/231926363-08254f1f-16cb-4063-b121-98b233bd2e3c.png)
- 
-Make sure everything is checked off and that you have your resource group, subscription, and your log analytics workspace info.
-![image](https://user-images.githubusercontent.com/112146207/231927395-28eb3a69-932b-4460-8cad-6641401e2528.png)
-
-We're going to go ahead and enable the security policy since we will use it later on
-
-Make sure to click on "security policy" and then click "Add more standards"
-
-![image](https://user-images.githubusercontent.com/112146207/232256225-219fdb5c-777a-452f-bdc3-7b4b71149ba1.png)
-
-We're going to add NIST 800-53: Security and privacy controls and Azure CIS 1.4.0 (latest version)
-
-We will now enable Defender Plans for both VMs and SQL Instances on VMs to detect and respond to potential security threats
+- To bolster the security of your Azure environment, our initial step will be to activate Microsoft Defender for Cloud for our subscription. 
   
-Now go back to Microsoft Defender for Cloud and click on "environment settings" and we're going to do the same thing for our work analytics workspace
+<p align="center">
+<img src="https://i.imgur.com/C33vLa3.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>   
+<p align="center">
+<img src="https://i.imgur.com/RHG1w2E.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
   
-![image](https://user-images.githubusercontent.com/112146207/232257863-6e58db5c-69af-45f5-83cb-f5344f04ce41.png)
+- Make sure everything is checked off and that you have your resource group, subscription, and your log analytics workspace info.
 
-![image](https://user-images.githubusercontent.com/112146207/232257971-c3b108d8-5904-4084-ad61-7a53d68eda18.png)
+<p align="center">
+<img src="https://i.imgur.com/IYU9DdO.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
+- We're going to go ahead and enable the security policy since we will use it later on.
 
+- Make sure to click on "security policy" and then click "Add more standards".
+
+- We're going to add NIST 800-53: Security and privacy controls and Azure CIS 1.4.0 (latest version).
+  
+<p align="center">
+<img src="https://i.imgur.com/NXbqskS.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- We will now enable Defender Plans for both VMs and SQL Instances on VMs to detect and respond to potential security threats.
+  
+- Go back to Microsoft Defender for Cloud and click on "environment settings" and we're going to do the same thing for our log analytics workspace.
+  
+<p align="center">
+<img src="https://i.imgur.com/KS6IJJK.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/ixD4Uc5.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+  
 This is from the Windows event log, so we are configuring this to send security events to our log analytics workspace
 
 ![image](https://user-images.githubusercontent.com/112146207/232257982-e4af1d6f-14eb-4a93-9ea6-f49c6a99f7aa.png)
