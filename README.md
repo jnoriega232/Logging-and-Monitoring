@@ -231,24 +231,35 @@ By leveraging logging at these different layers, you can effectively monitor and
 <img src="https://i.imgur.com/ixD4Uc5.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
   
-This is from the Windows event log, so we are configuring this to send security events to our log analytics workspace
+- Go to Data Collection to enable all events. Since the information originates from the Windows event log, we will configure the system to send security events to our designated log analytics workspace. This setup ensures that security-related events from Windows are seamlessly forwarded to the log analytics workspace for centralized monitoring and analysis.
 
-![image](https://user-images.githubusercontent.com/112146207/232257982-e4af1d6f-14eb-4a93-9ea6-f49c6a99f7aa.png)
- 
-Now we will configure logging and log forwarding for our NSG (mini firewall) 
+<p align="center">
+<img src="https://i.imgur.com/xncoHmZ.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
   
-We will start by going to our Azure home page, clicking "Windows VM", then going to networking,
-click on "windows-vm-nsg" 
+- Next, we will proceed with the configuration of logging and log forwarding for our Network Security Group (NSG), often referred to as a mini firewall. 
   
-![image](https://user-images.githubusercontent.com/112146207/232265995-760bf78d-f492-4d34-baaf-4651c0dc47c7.png)
+- To begin, navigate to the Azure home page and select "Windows VM." From there, access the networking settings and locate the "windows-vm-nsg" option. This will allow us to proceed with the configuration and management of the Network Security Group associated with the Windows VM. 
 
-We will now create some NSG flow logs 
-  
-![image](https://user-images.githubusercontent.com/112146207/232343530-137bf329-4e04-4045-b763-f99d2fb0246a.png)
+<p align="center">
+<img src="https://i.imgur.com/ycmjwxR.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-We will do the same thing for our Linux VM 
+- Next, we will generate Network Security Group (NSG) flow logs to capture relevant network traffic information.
   
-![image](https://user-images.githubusercontent.com/112146207/232343651-7cad24f6-e116-4672-ae02-af80285dd4ec.png)
+<p align="center">
+<img src="https://i.imgur.com/2PAAsVh.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- We will now do the same thing for our Linux VM.
+  
+<p align="center">
+<img src="https://i.imgur.com/JSQM97Y.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/prUXTL1.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
 <details close>
 
 ---
