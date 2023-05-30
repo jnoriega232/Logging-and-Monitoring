@@ -151,6 +151,7 @@ By leveraging logging at these different layers, you can effectively monitor and
 <p align="center">
 <img src="https://i.imgur.com/pT7Yffk.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
+
 <p align="center">
 <img src="https://i.imgur.com/qj0WkUT.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
@@ -160,6 +161,7 @@ By leveraging logging at these different layers, you can effectively monitor and
 <p align="center">
 <img src="https://i.imgur.com/fQWcpY2.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
+
 <p align="center">
 <img src="https://i.imgur.com/1pXDLiZ.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>  
@@ -189,6 +191,7 @@ By leveraging logging at these different layers, you can effectively monitor and
 <p align="center">
 <img src="https://i.imgur.com/ieyBzhM.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
+
 <p align="center">
 <img src="https://i.imgur.com/zXLjrZf.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
@@ -200,6 +203,7 @@ By leveraging logging at these different layers, you can effectively monitor and
 <p align="center">
 <img src="https://i.imgur.com/C33vLa3.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>   
+
 <p align="center">
 <img src="https://i.imgur.com/RHG1w2E.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
@@ -227,6 +231,7 @@ By leveraging logging at these different layers, you can effectively monitor and
 <p align="center">
 <img src="https://i.imgur.com/KS6IJJK.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
+
 <p align="center">
 <img src="https://i.imgur.com/ixD4Uc5.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
@@ -256,6 +261,7 @@ By leveraging logging at these different layers, you can effectively monitor and
 <p align="center">
 <img src="https://i.imgur.com/JSQM97Y.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
+
 <p align="center">
 <img src="https://i.imgur.com/prUXTL1.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
@@ -359,17 +365,19 @@ By leveraging logging at these different layers, you can effectively monitor and
 <img src="https://i.imgur.com/8WIRErR.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
 
-Type in "syslog" and click "run" and you should be able to see your logs coming in 
-  
-![image](https://user-images.githubusercontent.com/112146207/232672859-5c5ad373-9d24-42e6-a114-ee59c9e99ac6.png)
-  
-> We are now exploring KQL which is very similar to SQL 
+- Navigate to the "log analytics workspace" and access the "logs" section. Enter the search term "syslog" and execute the search by selecting the "run" option. This action will enable you to observe the incoming logs.
 
-> KQL helps us filter through logs to show us exactly what we want to find 
+<p align="center">
+<img src="https://i.imgur.com/Nah5rXU.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+> Currently, we are delving into KQL (Kusto Query Language), which bears a strong resemblance to SQL. KQL assists us in sifting through logs effectively, allowing us to pinpoint precisely the information we are seeking to discover. 
  
-![image](https://user-images.githubusercontent.com/112146207/232673231-f23821d7-0627-43ed-80b9-5d0c7980ddc4.png)
+<p align="center">
+<img src="https://i.imgur.com/JiAQ1jt.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- We will log in to our attack VM and fail a couple of logins against the Linux and Windows computers and observe them in the log analytics 
+- Next, we will access our designated attack virtual machine (VM) and intentionally perform a few unsuccessful login attempts against both the Linux and Windows computers. By doing so, we can closely monitor and examine the corresponding logs in the log analytics system.
   
 > Get the public IP address of your Windows VM
 
@@ -377,35 +385,49 @@ Type in "syslog" and click "run" and you should be able to see your logs coming 
 
 > Fail to login 3 times 
 
-![image](https://user-images.githubusercontent.com/112146207/232674032-a4f854b3-7946-4d24-9b34-e2b16b10a153.png)
-  
-- Now fail to login an RDP 
-  
-![image](https://user-images.githubusercontent.com/112146207/232674353-95d1b883-5f04-42f4-a907-16f79cdbf617.png)
- 
-  We will now fail login 3 times for our Linux machine and 1 successful connection 
+<p align="center">
+<img src="https://i.imgur.com/S8Pin77.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![image](https://user-images.githubusercontent.com/112146207/232672245-53df1c87-5d0b-4a2c-9917-00bd40a845ee.png)
-
-We can now go to "log Analytics" 
-
-The KQL query will look at the SSMS Authentication logs on the Windows computer
-
-We can see that the IP address is that of the attack VM
+- Deliberately induce a login failure using Remote Desktop Protocol (RDP).
   
-![image](https://user-images.githubusercontent.com/112146207/232676039-4441b94f-6f57-4e85-9d65-ae3c1c8bb345.png)
-  
-We will check our Linux failed authentication attempts 
-  
-We can see the times I tried to log in using an incorrect user and password 
-  
-![image](https://user-images.githubusercontent.com/112146207/232676715-cb74bdf0-52a7-46d6-af05-ed6267308bfd.png)
+<p align="center">
+<img src="https://i.imgur.com/n2spfPq.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![image](https://user-images.githubusercontent.com/112146207/232676902-4c080307-0cbf-49ee-b609-7bd7309dc3e1.png)
+- We will now employ PowerShell to trigger three sequential unsuccessful login attempts for our Linux machine, subsequently followed by a single successful connection.
 
-We will now check the failed RDP failures 
+<p align="center">
+<img src="https://i.imgur.com/JN9mxT4.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- We can now proceed to access "log Analytics."
+
+- The KQL query will examine the SSMS Authentication logs on the Windows computer.
+
+- Upon inspection, we can observe that the IP address corresponds to the attacking virtual machine.
   
-![image](https://user-images.githubusercontent.com/112146207/232677531-d8b20f1d-f561-4105-9585-70e24baae515.png)
+<p align="center">
+<img src="https://i.imgur.com/SALCiY2.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- We will now review the failed authentication attempts made on our Linux system. 
+  
+- We can observe the instances where I attempted to log in using an incorrect username and password combination.
+
+<p align="center">
+<img src="https://i.imgur.com/zf4AySq.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+<p align="center">
+<img src="https://i.imgur.com/iaWC1Tg.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- We will now analyze the unsuccessful login attempts made through Remote Desktop Protocol (RDP), with the option to filter the results based on the IP address of the attacker.
+  
+<p align="center">
+<img src="https://i.imgur.com/LH8Ql4L.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 <details close>
 
 ---
