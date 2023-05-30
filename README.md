@@ -265,80 +265,89 @@ By leveraging logging at these different layers, you can effectively monitor and
 ---
 
 </summary>
- 
-In this section, we will enable diagnostic settings for both NSGs 
+- In this segment, we will activate diagnostic settings for both Network Security Groups (NSGs). Enabling diagnostic settings allows us to capture and store valuable logs and metrics related to the NSGs, aiding in monitoring, analysis, and troubleshooting efforts for enhanced network security.
   
-Search "VM", click "Windows-VM" go to networking and click on your network security group 
-Click on "diagnostic settings" and "add diagnostic setting" 
-Put in your information and click "save" 
+- To proceed, search for "VM" and select "Windows-VM" from the search results. Navigate to the networking section and click on your associated Network Security Group. From there, access the "diagnostic settings" and click on "add diagnostic setting." Fill in the required information and click "save" to finalize the configuration. 
 
-![image](https://user-images.githubusercontent.com/112146207/232344379-94128f13-b60a-4ea2-9ddd-75138f189657.png)
-
-Do the same process for the Linux-VM
+<p align="center">
+<img src="https://i.imgur.com/QOrUjcb.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
   
-We will now add data connectors to our VMs and create some data collection rules 
+- Follow the same process mentioned earlier for the Linux-VM.
   
-First, go to Sentinel and click on "data connectors" and search "windows" 
+<p align="center">
+<img src="https://i.imgur.com/u5xdKYn.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-You should be able to see "Windows security events via AMA"
-
-Then click "open connector page" 
-
-> What is Data Connectors? You can stream all security events from the Windows machines connected to your Microsoft Sentinel workspace using the Windows agent. This connection enables you to view dashboards, create custom alerts, and improve investigation. This gives you more insight into your organization’s network and improves your security operation capabilities.
-
-![image](https://user-images.githubusercontent.com/112146207/232345194-b5cccdab-a8b2-482b-9f6b-ab2cfa2c7762.png)
-
-Click "create data collection rule" 
-
-This allows events/logs to be brought into the log analytics workspace from our VMs
-
-Fill in the information 
-
-![image](https://user-images.githubusercontent.com/112146207/232345533-3e5fe29a-37f0-42c9-ac76-0c3d84546730.png)
-
-Go to resources and click "add resources" 
+- Next, we will integrate data connectors into our Virtual Machines (VMs) and establish data collection rules to gather relevant information. By adding data connectors and configuring data collection rules, we can effectively capture and analyze data from the VMs for monitoring and security purposes.
   
-![image](https://user-images.githubusercontent.com/112146207/232345592-00326467-8e19-4e76-a2ba-132f0819b762.png)
+- To begin, navigate to Microsoft Sentinel and access the "data connectors" section. Search for "windows" and locate the "Windows security events via AMA" connector. Click on "open connector page" to proceed with the configuration. 
 
-And at the end, it should look like this 
+> Data Connectors in Microsoft Sentinel provide the ability to stream all security events from Windows machines connected to your workspace using the Windows agent. This integration allows you to leverage dashboards, create custom alerts, and enhance your investigation capabilities. By gaining deeper insights into your organization's network and bolstering your security operations, you can improve overall security posture and incident response effectiveness.
 
-![image](https://user-images.githubusercontent.com/112146207/232345624-34d89b98-2405-4606-ad08-50b6a0ff32d1.png)
+<p align="center">
+<img src="https://i.imgur.com/94GlalH.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-We will now do this for our Linux VM
+- Proceed by clicking on "create data collection rule" to initiate the process. This step enables the transfer of events and logs from our Virtual Machines (VMs) into the log analytics workspace. Fill in the necessary information, ensuring the proper configuration for seamless data collection and analysis.
+
+<p align="center">
+<img src="https://i.imgur.com/Iu6VqXH.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- Navigate to the "resources" section and select "add resources" to proceed with the next step.
+
+<p align="center">
+<img src="https://i.imgur.com/03wn7eo.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- Finally, after completing the necessary steps, the configuration should resemble the following representation. 
+
+<p align="center">
+<img src="https://i.imgur.com/03wn7eo.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- Now, let's repeat the same process for our Linux VM. Start by searching for "log analytics workspace" and access the "agents" section. From there, click on "Linux servers" and proceed to click on "Data collection rules." 
   
-Search "log analytics workspace" and click on "agents"
- 
-Click on "Linux servers" and click "Data collection rules" 
+<p align="center">
+<img src="https://i.imgur.com/iJHN4Wx.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- Click on the "Create" button to initiate the setup process for data collection rules on the Linux VM. 
   
-![image](https://user-images.githubusercontent.com/112146207/232345917-8ff52ffd-9f89-4769-8fcb-c25e2acb3b30.png)
+<p align="center">
+<img src="https://i.imgur.com/omUx1ii.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-Click "Create" 
+- Proceed to the "resources" section and select the Linux-VM from the available resources. 
+
+<p align="center">
+<img src="https://i.imgur.com/uLBIGKF.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
   
-![image](https://user-images.githubusercontent.com/112146207/232345993-dff68917-0376-4073-b1ef-eb6c80c3eac6.png)
-
-Now go to resources and click on the Linux-VM
-
-![image](https://user-images.githubusercontent.com/112146207/232346046-56e725ef-55e0-45e5-8dc1-fb7ff2e326be.png)
-
-We will now add a data source for our Linux VM
+- Next, let's add a data source for our Linux VM by selecting the "Linux Syslog" as the data source type. Ensure that the LOG_AUTH is set to LOG_DEBUG while leaving the other logs as "none." 
   
-The data source type is "Linux Syslog" and leave LOG_AUTH set to LOG_DEBUG
+<p align="center">
+<img src="https://i.imgur.com/5OHzKO6.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-The rest of the logs should be "none"
+- After completing the necessary configurations, the final result should resemble the provided example. This indicates that the data source for the Linux VM has been successfully added, allowing for the collection and analysis of syslog data within the log analytics workspace.
   
-![image](https://user-images.githubusercontent.com/112146207/232346488-8bd5f1a3-5b25-4bbd-b8cb-48dcc902debb.png)
+<p align="center">
+<img src="https://i.imgur.com/8fMpu0J.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-The final result should look something like this 
+- Return to the log analytics workspace and open a new window to verify that the collection of application logs is properly configured and operational.
   
-![image](https://user-images.githubusercontent.com/112146207/232348779-32801522-00c0-4f07-a9b8-1d50ea834278.png)
- 
-We will go back to our log analytics workspace and create another window to make sure it's collecting application logs 
-  
-![image](https://user-images.githubusercontent.com/112146207/232349001-7d3135e3-2d2d-42ed-a3b9-2c7cc9b65f60.png)
+<p align="center">
+<img src="https://i.imgur.com/4A5wLJ1.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-The final result should look like this
+- After performing the necessary checks and configurations, the final result should resemble the provided example. 
 
-![image](https://user-images.githubusercontent.com/112146207/232349296-8e3bd95d-0dc4-4d8a-b597-3bb9363dc859.png)
+<p align="center">
+<img src="https://i.imgur.com/M6AUWi7.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 Now, we will keep checking/ refreshing the log analytics agents tab and ensure the VMs show up there 
   
