@@ -349,13 +349,15 @@ By leveraging logging at these different layers, you can effectively monitor and
 <img src="https://i.imgur.com/M6AUWi7.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
 
-Now, we will keep checking/ refreshing the log analytics agents tab and ensure the VMs show up there 
+- Continuously monitor and refresh the log analytics agents tab within the log analytics workspace to verify the presence of the Windows and Linux VMs. Navigate to the "log analytics workspace" and access the "agents" section to ensure that both the Windows and Linux VMs are listed and properly connected to the log analytics workspace.
   
-Go to "log analytics workspace" and then "agents" and make sure that your Windows and Linux VMs are showing up 
-  
-![image](https://user-images.githubusercontent.com/112146207/232349589-a0925f87-7c29-4b37-aa07-d1289f503c3e.png)
+<p align="center">
+<img src="https://i.imgur.com/ixZZzri.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![image](https://user-images.githubusercontent.com/112146207/232349604-fbb882c4-332c-44d1-a4f2-ed38879289e5.png)
+<p align="center">
+<img src="https://i.imgur.com/8WIRErR.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 Type in "syslog" and click "run" and you should be able to see your logs coming in 
   
