@@ -495,29 +495,33 @@ By leveraging logging at these different layers, you can effectively monitor and
 
 <details close>
 
-In this lab, we will bring in subscription-level logging (activity log)
+- In this lab, our objective is to incorporate subscription-level logging, specifically the activity log.
+
+- To achieve this, we will export Azure Activity Logs to the log analytics workspace.
+
+- To initiate the process, navigate to "Azure Monitor," select "Activity Log," and locate the "Export activity logs" option.
+
+- Proceed by clicking "Add diagnostic setting" to continue.
   
-First, we will export Azure Activity Logs to the log analytics workspace 
-  
-Go to "Azure monitor" click "activity log" and find "export activity logs" 
+<p align="center">
+<img src="https://i.imgur.com/8aLWepA.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-From there click "Add diagnostic setting" 
-  
-![image](https://user-images.githubusercontent.com/112146207/233226463-261d0029-d59e-4f6e-b392-3c1e63b47e68.png)
+- Let's create two new resource groups: one named "Scratch-Resource Group" and another named "Critical Infrastructure Wastewater."
 
-We will now create a new resource group named "Scratch-Resource Group" and "critical infrastructure wastewater" 
+<p align="center">
+<img src="https://i.imgur.com/uEaOzgl.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![image](https://user-images.githubusercontent.com/112146207/233227240-5c494dbb-0dec-4649-9aaf-d55845edeb6f.png)
+- To generate logs in the management plane and observe them, we will delete the resource groups we previously created.
 
-We will now delete the resource groups we just created 
+- The purpose of this action is to generate log activity that we can analyze.
 
-The reason for this is that we want to generate logs and observe them 
-  
-We will produce test lab queries 
+- We will perform test lab queries to gain a better understanding of KQL (Kusto Query Language) and its application in filtering through log activity.
 
-This is to better understand KQL and how to use it to filter through log activity
-  
-![image](https://user-images.githubusercontent.com/112146207/233230084-af667fea-5b7e-4fb4-81f2-a1d43227e4e4.png) 
+<p align="center">
+<img src="https://i.imgur.com/66dEbgo.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 <details close>
 
 ---
