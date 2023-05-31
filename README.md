@@ -528,30 +528,44 @@ By leveraging logging at these different layers, you can effectively monitor and
 
 </summary>
   
-In this lab, we will collect logs for our blob storage and our key vault
+- In this lab, our focus will be on collecting logs for both our blob storage and key vault.
 
-We will Configure logging for our storage account by enabling diagnostic settings for blob storage
+- To accomplish this, we will enable diagnostic settings for our storage account to configure logging specifically for the blob storage component.
 
-![image](https://user-images.githubusercontent.com/112146207/233239472-a29723af-0560-45ea-86f6-b604f8475c7a.png)
-  
-Generate some Logs for Azure Storage (read some blobs/files)
-  
-![image](https://user-images.githubusercontent.com/112146207/233239985-f46c4019-6955-484d-81d3-109330c46641.png)
-  
-We are going to create a diagnostic setting to enable logging of the key vault
-  
-![image](https://user-images.githubusercontent.com/112146207/233242773-15eb31ee-af85-465c-8829-396201ab2934.png)
+<p align="center">
+<img src="https://i.imgur.com/la4MQ8T.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-We will now configure logging for our key vault 
+- Next, we will generate logs for Azure Storage by performing actions such as reading blobs or files within the storage.
   
-First, we will create a Key Vault Instance
+<p align="center">
+<img src="https://i.imgur.com/qYpw0LV.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- We will create a diagnostic setting to activate logging for the key vault.
   
-![image](https://user-images.githubusercontent.com/112146207/233240688-6d9b72f0-2e52-47cd-8a62-022ed5cf76ae.png)
+<p align="center">
+<img src="https://i.imgur.com/WE3mFwe.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Now we will add a secret to Key Vault called “Tenant-Global-Admin-Password” with a made-up password
+- Now, we will proceed to configure logging for our key vault.
+
+- To begin, we will create a Key Vault instance.
   
-![image](https://user-images.githubusercontent.com/112146207/233241999-ced3fa1c-47a4-4f10-b861-b336ea2cd6c2.png)
+<p align="center">
+<img src="https://i.imgur.com/lMZYIuf.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-- Generate some Logs for Key Vault by reading this secret within the Azure Portal
+- We will now add a secret to the Key Vault, naming it "Tenant-Global-Admin-Password" and assigning a fictitious password to it.
+  
+<p align="center">
+<img src="https://i.imgur.com/haJe2C1.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-> Observe the Logs (they may take a moment to appear) -  Use the KQL Query Cheat Sheet
+- Let's generate some logs for the Key Vault by accessing and reading the secret named "Tenant-Global-Admin-Password" within the Azure Portal.
+
+> Take a moment to observe the logs, noting that they may require some time to appear. Feel free to refer to the [KQL Query Cheat Sheet] (https://github.com/joshmadakor1/Cyber-Course/blob/main/KQL-Query-Cheat-Sheet.md) for assistance in analyzing the logs.
+  
+<p align="center">
+<img src="https://i.imgur.com/haJe2C1.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
