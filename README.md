@@ -1,11 +1,10 @@
 # Logging and Monitoring
 
-## Objectives for the next 7 Labs, which will help us build our Logging and Monitoring System:
+## Objectives for the next 6 Labs, which will help us build our Logging and Monitoring System:
 
 - Overview of Azure Logging at Different Layers (Tenant, Activity, Resource)
 - Geo IP Data Ingestion & Log Analytics & Microsoft Sentinel Setup
-- Enable MDC & Configure Log Collection for VMs
-- KQL Deep Dive
+- Enable Microsoft Defender for Cloud & Configure Log Collection for VMs
 - Tenant Level Logging
 - Subscription Level Logging
 - Resource Level Logging
@@ -434,61 +433,65 @@ By leveraging logging at these different layers, you can effectively monitor and
 
 </summary>
 
-In this section, we will bring tenant-level logs from Azure Active Directory 
+- In this section, we will import tenant-level logs from Azure Active Directory. The crucial aspect of this lab is obtaining "Azure Active Directory Premium P2."
+
+- To do so, navigate to Active Directory > Licenses > All products.
+
+- Click on "Add" and locate the free trial for Premium P2.
+
+- Once that is completed, search for "Azure AD," access "Security," and select "Identity Protection."
+
+- Locate the "User Risk Policy" and ensure it is enabled.
+
+- Additionally, verify that the "Sign-in Risk Policy" is also activated.
+  
+<p align="center">
+<img src="https://i.imgur.com/AlxgXP2.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+- Navigate to Azure AD and perform a search for "diagnostic settings."
+
+- We will customize the logging settings to specify which logs we want to collect.
  
-The most important part of this lab is to get the "Azure Active Directory Premium P2"
+<p align="center">
+<img src="https://i.imgur.com/JD7YMdP.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-Go to Active Directory> Licenses > All products
+- Within Azure AD, locate the "users" section and proceed to create a new user.
 
-Then click "add" and you should be able to see the free trial to Premium P2
+<p align="center">
+<img src="https://i.imgur.com/nFrYwBS.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-After that is all set and done 
-
-Search "Azure AD" go to "Security" then click "Identity Protection" and find "User Risk Policy"
-
-Make sure that you have a user risk policy on 
-
-Sign-in risk policy should also be on 
+- Subsequently, we will assign the role of Global Administrator to our dummy_user.
   
-![image](https://user-images.githubusercontent.com/112146207/232914636-98383955-f4f8-412b-a5e4-f6a941508934.png)
-  
-Go to Azure AD and search for "diagnostic settings"
+<p align="center">
+<img src="https://i.imgur.com/rf9Jmkz.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-We will configure which logs we want to be collected 
- 
-![image](https://user-images.githubusercontent.com/112146207/232916264-d04e3c5f-4979-4282-855a-31a275df883e.png)
+- Now, we need to delete our dummy_user to generate logs for the removal of a global administrator.
   
-In Azure AD look for "users" and create a new user 
+<p align="center">
+<img src="https://i.imgur.com/NDvrXIZ.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-![image](https://user-images.githubusercontent.com/112146207/232917967-8c2786ca-1d8c-4afb-a201-a16d9cd01ad1.png)
-
-Next, we will assign our dummy_user the role of Global Administrator 
+- We will now initiate a simulated brute force attack against Azure Active Directory (AAD), followed by the analysis of the resulting logs in the work analytics workspace.
   
-![image](https://user-images.githubusercontent.com/112146207/232919275-093723f3-579e-4587-a580-0954f07d08a2.png)
-  
-Now we have to delete our dummy_user
-  
-![image](https://user-images.githubusercontent.com/112146207/232920249-a0fa6588-8650-48fd-b009-6a6f39b30a0f.png)
-  
-We will now simulate a brute force attack against AAD
-
-Then we will observe those logs in the work analytics workspace 
-  
-First, get your V.S code 
+- To begin, obtain your Visual Studio Code (VS Code) environment.
   
 ![image](https://user-images.githubusercontent.com/112146207/233215613-0b2e01f1-1f40-4a80-8aff-4a872309ae60.png)
 
-Run the "AAD-Brute-Force-Success-Simulator.ps1" from within your attack-VM
+- We will execute the "AAD-Brute-Force-Success-Simulator.ps1" script from our attack-VM.
   
-![image](https://user-images.githubusercontent.com/112146207/233221860-106b7e3f-b176-4f47-bf82-b2a0d54202df.png)
-  
- We now go back to our log analytics workspace 
+<p align="center">
+<img src="https://i.imgur.com/asUbJwi.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
-Click on "logs" 
-
-We are using KQL to query logs we want to see
+- Let's return to our log analytics workspace and navigate to the "logs" section. From there, we will utilize KQL (Kusto Query Language) to query and display the logs of our interest.
   
-![image](https://user-images.githubusercontent.com/112146207/233224548-ad887a59-bd80-48a3-b4a3-2f0196f4b52e.png)
+<p align="center">
+<img src="https://i.imgur.com/Ucl7MtZ.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
 
 <details close>
 
