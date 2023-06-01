@@ -270,6 +270,7 @@ By leveraging logging at these different layers, you can effectively monitor and
 ---
 
 </summary>
+
 - In this segment, we will activate diagnostic settings for both Network Security Groups (NSGs). Enabling diagnostic settings allows us to capture and store valuable logs and metrics related to the NSGs, aiding in monitoring, analysis, and troubleshooting efforts for enhanced network security.
   
 - To proceed, search for "VM" and select "Windows-VM" from the search results. Navigate to the networking section and click on your associated Network Security Group. From there, access the "diagnostic settings" and click on "add diagnostic setting." Fill in the required information and click "save" to finalize the configuration. 
