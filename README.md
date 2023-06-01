@@ -564,8 +564,12 @@ By leveraging logging at these different layers, you can effectively monitor and
 
 - Let's generate some logs for the Key Vault by accessing and reading the secret named "Tenant-Global-Admin-Password" within the Azure Portal.
 
-> Take a moment to observe the logs, noting that they may require some time to appear. Feel free to refer to the [KQL Query Cheat Sheet](https://github.com/joshmadakor1/Cyber-Course/blob/main/KQL-Query-Cheat-Sheet.md) for assistance in analyzing the logs.
-  
 <p align="center">
-<img src="https://i.imgur.com/haJe2C1.png" height="70%" width="70%" alt="Azure Free Account"/> 
+<img src="https://i.imgur.com/548Mi3m.png" height="70%" width="70%" alt="Azure Free Account"/> 
 </p>
+
+<p align="center">
+<img src="https://i.imgur.com/Z2xZ3zU.png" height="70%" width="70%" alt="Azure Free Account"/> 
+</p>
+
+> Take a moment to observe the logs, noting that they may require some time to appear. Feel free to refer to the [KQL Query Cheat Sheet](https://github.com/joshmadakor1/Cyber-Course/blob/main/KQL-Query-Cheat-Sheet.md) for assistance in analyzing the logs.
