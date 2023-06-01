@@ -574,3 +574,5 @@ By leveraging logging at these different layers, you can effectively monitor and
 </p>
 
 > Take a moment to observe the logs, noting that they may require some time to appear. Feel free to refer to the [KQL Query Cheat Sheet](https://github.com/joshmadakor1/Cyber-Course/blob/main/KQL-Query-Cheat-Sheet.md) for assistance in analyzing the logs.
+
+In our upcoming [labs](https://github.com/jnoriega232/Microsoft-Sentinel-SIEM/blob/main/README.md), we will cover the setup and configuration of our Security Information and Event Management (SIEM) system in Sentinel.
